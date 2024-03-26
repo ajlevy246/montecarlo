@@ -1,6 +1,6 @@
 """Provide the primary functions."""
 
-from BitString import *
+from bitstring import BitString
 
 def test():
     testBitString = BitString(5)
