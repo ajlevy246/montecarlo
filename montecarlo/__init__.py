@@ -1,7 +1,7 @@
 """Implements MonteCarlo for use in Ising-Hamiltonian Model"""
 
-from montecarlo import *
-from test import *
+from isinghamiltonian import *
+from bitstring import *
 
 if __name__ == "__main__":
-    testPackage()
+    print("Running as main")
