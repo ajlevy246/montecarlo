@@ -1,4 +1,4 @@
-from bitstring import BitString
+from montecarlo.bitstring import BitString
 
 def test():
     testBitString = BitString(5)
