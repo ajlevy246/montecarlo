@@ -1,15 +1,16 @@
 import numpy as np
-from bitstring import BitString
+from montecarlo import bitstring
+from montecarlo.bitstring import BitString
 
 class IsingHamiltonian:
-    def __init__(self, J: list[list[tuple][int, int]], mus: list[int]):
+    def __init__(self, J, mus):
         self.J = J
         self.mus = mus
     
     def compute_average_values(self, temperature: int):
         #Iterate over all possible bit strings, return the average energy, average magnetization, heat capactity and magnetic susceptibility
 
-        bs = BitString(len(self.J)) #Creates a bew bitstring object of length (length of J).
+        bs = bitstring.BitString(len(self.J)) #Creates a bew bitstring object of length (length of J).
 
         beta = 1/(1.38064852 **(10**(-23)) * temperature) #Calculate beta
 
@@ -60,11 +61,12 @@ class IsingHamiltonian:
 #--------------------------------------------
 #Helper functions
 
-    def energy(self, bs: BitString):
+    def energy(self, bs):
         energy = 0 #Initialize energy
         bitStringArray = [1 if bit else -1 for bit in bs.config] #Convert 0's --> -1's
 
-        for node in self.J: #Node: [(connected node, edge weight), ....]
+        for i in range(len(self.J)): #Node: [(connected node, edge weight), ....]
+            node = self.J[i]
             for edge in node: #Edge: (connected node, edge weight)
                 if node < edge[0]: #Ignores duplicated edges
                     connectionEnergy = bitStringArray[node] * bitStringArray[edge[0]] * edge[1] #spin(node1) * spin(node2) * edge weight
