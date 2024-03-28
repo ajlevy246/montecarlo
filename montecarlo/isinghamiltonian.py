@@ -68,7 +68,7 @@ class IsingHamiltonian:
         for i in range(len(self.J)): #Node: [(connected node, edge weight), ....]
             node = self.J[i]
             for edge in node: #Edge: (connected node, edge weight)
-                if node < edge[0]: #Ignores duplicated edges
+                if i < edge[0]: #Ignores duplicated edges
                     connectionEnergy = bitStringArray[node] * bitStringArray[edge[0]] * edge[1] #spin(node1) * spin(node2) * edge weight
                     energy += connectionEnergy #Adds energy of the given edge to the total
                     

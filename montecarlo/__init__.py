@@ -1,7 +1,6 @@
 """Implements MonteCarlo for use in Ising-Hamiltonian Model"""
 
-from montecarlo import isinghamiltonian
-from montecarlo import bitstring
+from montecarlo.isinghamiltonian import IsingHamiltonian
 from montecarlo.bitstring import BitString
 
 if __name__ == "__main__":
