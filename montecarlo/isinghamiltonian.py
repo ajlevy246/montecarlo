@@ -10,9 +10,9 @@ class IsingHamiltonian:
     def compute_average_values(self, temperature: int):
         #Iterate over all possible bit strings, return the average energy, average magnetization, heat capactity and magnetic susceptibility
 
-        bs = BitString(len(self.J)) #Creates a bew bitstring object of length (length of J).
+        bs = BitString(len(self.J)) #Creates a new bitstring object of length (length of J).
 
-        beta = 1/(1.38064852 **(10**(-23)) * temperature) #Calculate beta
+        beta = 1/(1.38064852 ** (10 ** (-23)) * temperature) #Calculate beta
 
         factorZ = 0
         averageEnergyEV = 0
