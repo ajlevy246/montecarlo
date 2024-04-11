@@ -3,7 +3,17 @@ import numpy as np
 from montecarlo.bitstring import BitString
 
 class IsingHamiltonian:
+    """Ising Hamiltonian Class
+    For calculating thermodynamic averages
+    """
     def __init__(self, J, mus):
+        """_summary_
+
+        :param J: J values
+        :type J: _type_
+        :param mus: Mu values
+        :type mus: _type_
+        """
         self.J = J
         self.mus = mus
     
