@@ -92,7 +92,7 @@ class BitString:
         """
         return int(str(self), 2)
  
-    def set_config(self, s:list[int]):
+    def set_config(self, s):
         """_summary_
 
         :param s: _description_
@@ -101,7 +101,7 @@ class BitString:
         self.config = np.array(s)
         
 
-    def set_int_config(self, dec:int, digits=0):
+    def set_int_config(self, dec, digits=0):
         """_summary_
 
         :param dec: _description_
