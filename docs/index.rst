@@ -13,9 +13,7 @@ a simple Ising Hamiltonian Model, to find the ground state.
 
    getting_started
    api
-
-
-
+   about
 Indices and tables
 ==================
 

@@ -5,4 +5,4 @@ API Documentation
    :toctree: autosummary
 
    montecarlo.bitstring
-   motecarlo.isinghamiltonian
+   montecarlo.isinghamiltonian
