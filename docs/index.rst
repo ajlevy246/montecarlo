@@ -5,7 +5,8 @@
 
 Welcome to MonteCarlo's documentation!
 =========================================================
-
+The montecarlo package is designed to run a montecarlo simulation on
+a simple Ising Hamiltonian Model, to find the ground state.
 .. toctree::
    :maxdepth: 2
    :caption: Contents:

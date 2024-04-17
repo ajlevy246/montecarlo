@@ -1,14 +1,13 @@
 import numpy as np
 
 class BitString:
-    """
-    Simple class to implement a config of bits
+    """Simple class to generate a bitstring configuration
     """
     def __init__(self, N):
-        """_summary_
+        """Intializes a new bitstring object
 
-        :param N: _description_
-        :type N: _type_
+        :param N: Number of bits
+        :type N: int
         """
         self.N = N
         self.config = np.zeros(N, dtype=int) 
