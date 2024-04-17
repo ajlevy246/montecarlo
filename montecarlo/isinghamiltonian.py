@@ -1,6 +1,6 @@
 import numpy as np
 
-from montecarlo import BitString
+from montecarlo.bitstring import BitString
 
 class IsingHamiltonian:
     """Ising Hamiltonian Class
