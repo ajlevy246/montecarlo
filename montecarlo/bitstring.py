@@ -1,5 +1,6 @@
 import numpy as np
 
+#;laskdjfl;aksdjf
 class BitString:
     """Simple class to generate a bitstring configuration
     """
