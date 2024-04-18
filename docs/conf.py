@@ -42,7 +42,7 @@ release = ''
 extensions = [
     'autoapi.extension',
     #'sphinx.ext.autosummary',
-    #'sphinx.ext.autodoc',
+    'sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
