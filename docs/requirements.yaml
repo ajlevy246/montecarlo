@@ -13,3 +13,4 @@ dependencies:
   - pip:
         - sphinx
         - sphinx-rtd-theme
+        - autoapi
