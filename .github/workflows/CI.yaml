@@ -62,3 +62,9 @@ jobs:
           file: ./coverage.xml
           flags: unittests
           name: codecov-${{ matrix.os }}-py${{ matrix.python-version }}
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: 5bb16304-856c-43f5-80aa-4c2b3a6799eb
+          slug: ajlevy246/MonteCarlo
