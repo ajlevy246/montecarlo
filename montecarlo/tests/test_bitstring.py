@@ -3,7 +3,7 @@ import montecarlo
 test = montecarlo.BitString(10) #Test bitstring with 10 bits.
 
 def test_to_str():
-    assert (str(test) = "000000000000")
+    assert (str(test) == "000000000000")
 
 def test_equals():
     assert (test == montecarlo.BitString(10))
