@@ -12,7 +12,6 @@ def test_equals():
     assert (test != [0, 1, 0, 0, 0, 0, 0, 0, 0, 0])
 
 def test_length():
-    testLength = test.len()
     assert (len(test) == 10)
     assert(len(montecarlo.BitString(5)) == 5)
 
@@ -29,6 +28,7 @@ def test_flip_site():
     assert(str(test) == "0100000000")
 
 def test_int():
+    test.set_int_config(0)
     assert (test.int() == 0)
 
     test.set_int_config(1)
@@ -46,6 +46,7 @@ def test_set_int_config():
     assert(test == [0,1,0,1])
 
 def test_sum():
+    test.set_int_config(0)
     assert(test.sum() == 0)
     test.set_int_config(5, 4)
 
