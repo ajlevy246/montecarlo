@@ -2,7 +2,7 @@ MonteCarlo
 ==============================
 [//]: # (Badges)
 [![GitHub Actions Build Status](https://github.com/ajlevy246/montecarlo/workflows/CI/badge.svg)](https://github.com/ajlevy246/montecarlo/actions?query=workflow%3ACI)
-[![codecov](https://codecov.io/gh/ajlevy246/MonteCarlo/branch/main/graph/badge.svg)](https://codecov.io/gh/ajlevy246/MonteCarlo/branch/main)
+[![codecov](https://codecov.io/gh/ajlevy246/montecarlo/graph/badge.svg?token=UDYH1HNYK2)](https://codecov.io/gh/ajlevy246/montecarlo)
 [![docs](https://readthedocs.org/projects/ajlevy246-montecarlo/badge/?version=latest&style=plastic)](https://ajlevy246-montecarlo.readthedocs.io/en/latest/)
 
 
