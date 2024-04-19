@@ -125,4 +125,4 @@ class BitString:
         :rtype: _type_
         """
         numList = [int(bit) for bit in str(self)] #Convert numpy.bitstring into list of ints, because I can't figure out how to sum over it
-        return sum(numList) #Super inefficient but whatever.
+        return sum(numList) 
