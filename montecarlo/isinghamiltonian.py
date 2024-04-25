@@ -120,6 +120,7 @@ class IsingHamiltonian:
         for i in range(2 ** len(self.J)):
             bs.set_int_config(i)
 
-            config_energies.append((int(str(bs)), self.energy(bs)))
+            config_energies.append((self.energy(bs), str(bs)))
 
-        return min(config_energies)
+        minimum = min(config_energies)
+        return minimum
