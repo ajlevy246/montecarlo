@@ -7,22 +7,31 @@ class IsingHamiltonian:
     For calculating thermodynamic averages
     """
     def __init__(self, J, mus):
-        """_summary_
+        """Creates a new Ising Hamiltonian object
 
         :param J: J values
-        :type J: _type_
+        :type J: list[list]
         :param mus: Mu values
-        :type mus: _type_
+        :type mus: list[int]
         """
         self.J = J
         self.mus = mus
     
     def compute_average_values(self, temperature: int):
+        """Computes the thermodynamic averages for a given bitstring length.
+
+        Args:
+            temperature (int): Temperature of the system.
+
+        Returns:
+            tuple: average energy, average magnetic energy, heat capacity, and magnetic susceptibility.
+        """
         #Iterate over all possible bit strings, return the average energy, average magnetization, heat capactity and magnetic susceptibility
 
         bs = BitString(len(self.J)) #Creates a new bitstring object of length (length of J).
 
-        beta = 1/(1.38064852 ** (10 ** (-23)) * temperature) #Calculate beta
+        beta = 1/temperature
+        #beta = 1/(1.38064852 ** (10 ** (-23)) * temperature) #Calculate beta
 
         factorZ = 0
         averageEnergyEV = 0
@@ -61,7 +70,7 @@ class IsingHamiltonian:
         averageMagSqEV /= factorZ 
 
         #Calc final values for HC and MS
-        heatCapacity = (averageEnergySqEV - (averageEnergyEV**2)) / temperature
+        heatCapacity = (averageEnergySqEV - (averageEnergyEV**2)) / (temperature**2)
         magneticSusceptibility = (averageMagSqEV - (averageMagEV**2)) / temperature
 
         return averageEnergyEV, averageMagEV, heatCapacity, magneticSusceptibility
@@ -72,6 +81,14 @@ class IsingHamiltonian:
 #Helper functions
 
     def energy(self, bs):
+        """Calculates the energy of a speccific bitstring configuration
+
+        Args:
+            bs BitString: A bit string configuration to calculate energy for.
+
+        Returns:
+            float: Calculated energy for the configuration.
+        """
         energy = 0 #Initialize energy
         bitStringArray = [1 if bit else -1 for bit in bs.config] #Convert 0's --> -1's
 
@@ -88,6 +105,14 @@ class IsingHamiltonian:
 
 
     def get_lowest_energy_config(self, verbose=1):
+        """Calculates the lowest energy configuration for a bitstring of a set length.
+
+        Args:
+            verbose (int, optional): Not necessary for this implementation. Defaults to 1.
+
+        Returns:
+            tuple: (minimum energy, corresponding configuration)
+        """
         bs = BitString(len(self.J))
 
         config_energies = [] #(energies, config)
@@ -95,8 +120,6 @@ class IsingHamiltonian:
         for i in range(2 ** len(self.J)):
             bs.set_int_config(i)
 
-            config_energies.append(str(bs), self.energy(bs))
+            config_energies.append((int(str(bs)), self.energy(bs)))
 
         return min(config_energies)
-        
-        

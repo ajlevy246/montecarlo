@@ -14,10 +14,10 @@ class BitString:
         self.config = np.zeros(N, dtype=int) 
 
     def __repr__(self):
-        """_summary_
+        """Returns a string representation of the object
 
-        :return: _description_
-        :rtype: _type_
+        :return: string rep
+        :rtype: string
         """
         stringRep = ""
         for bit in self.config:
@@ -25,12 +25,12 @@ class BitString:
         return stringRep
 
     def __eq__(self, other): 
-        """_summary_
+        """checks whether two bitstrings are equal
 
-        :param other: _description_
-        :type other: _type_
-        :return: _description_
-        :rtype: _type_
+        :param other: another object to check against
+        :type other: any
+        :return: True if equal, false otherwise.
+        :rtype: boolean
         """
         try:       
             return True if (self.config==other.config).all() else False #Works if other is a BitString object.
@@ -45,18 +45,18 @@ class BitString:
             return False #Works if other is a list
      
     def __len__(self):
-        """_summary_
+        """Returns the length of the underlying array.
 
-        :return: _description_
-        :rtype: _type_
+        :return: length of the array
+        :rtype: int
         """
         return len(self.config)
 
     def on(self):
-        """_summary_
+        """Returns the number of bits that are flipped on.
 
-        :return: _description_
-        :rtype: _type_
+        :return: Number of on bits
+        :rtype: int
         """
         countOn = 0
         for bit in self.config:
@@ -65,10 +65,10 @@ class BitString:
         return countOn
     
     def off(self):
-        """_summary_
+        """Returns the number of bits that are flipped off.
 
-        :return: _description_
-        :rtype: _type_
+        :return: Number of off bits
+        :rtype: int
         """
         countOff = 0
         for bit in self.config:
@@ -77,36 +77,36 @@ class BitString:
         return countOff
     
     def flip_site(self,i):
-        """_summary_
+        """Flips the bit at the given index
 
-        :param i: _description_
-        :type i: _type_
+        :param i: index to flip
+        :type i: int
         """
         self.config[i] = 0 if self.config[i] else 1
     
     def int(self):
-        """_summary_
+        """Returns an integer representation of the object.
 
-        :return: _description_
-        :rtype: _type_
+        :return: base 10 integer representation.
+        :rtype: int
         """
         return int(str(self), 2)
  
     def set_config(self, s):
-        """_summary_
+        """sets the configuration of the bit string.
 
-        :param s: _description_
+        :param s: A new configuration to set.
         :type s: list[int]
         """
         self.config = np.array(s)
         
 
     def set_int_config(self, dec, digits=0):
-        """_summary_
+        """Sets the configuration of the bit string, based on a decimal integer.
 
-        :param dec: _description_
+        :param dec: decimal integer
         :type dec: int
-        :param digits: _description_, defaults to 0
+        :param digits: number of digits to configure to, defaults to 0
         :type digits: int, optional
         """
         digits = len(self.config) if not digits else digits
@@ -119,10 +119,10 @@ class BitString:
         self.config = np.array(tmpArray)
 
     def sum(self):
-        """_summary_
+        """Sums the number of on bits.
 
-        :return: _description_
-        :rtype: _type_
+        :return: Sum of on bits
+        :rtype: int
         """
         numList = [int(bit) for bit in str(self)] #Convert numpy.bitstring into list of ints, because I can't figure out how to sum over it
         return sum(numList) 
