@@ -90,13 +90,13 @@ class IsingHamiltonian:
     def get_lowest_energy_config(self, verbose=1):
         bs = BitString(len(self.J))
 
-        energies = []
+        config_energies = [] #(energies, config)
 
         for i in range(2 ** len(self.J)):
             bs.set_int_config(i)
 
-            energies.append(self.energy(bs))
+            config_energies.append(str(bs), self.energy(bs))
 
-        return min(energies)
+        return min(config_energies)
         
         
