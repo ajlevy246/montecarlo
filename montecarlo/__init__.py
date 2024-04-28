@@ -2,7 +2,3 @@
 
 from .bitstring import BitString
 from .isinghamiltonian import IsingHamiltonian
-
-
-if __name__ == "__main__":
-    print("Running as main")
